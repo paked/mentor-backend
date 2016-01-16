@@ -8,9 +8,28 @@ import (
 
 var mentees = []User{
 	{
+		ID:        0,
 		Username:  "rafej",
 		FirstName: "Rafe",
 		LastName:  "Skidmore",
+		Email:     "hello@rafej.io",
+		Bio:       "Doing things. Doing them now.",
+	},
+	{
+		ID:        1,
+		Username:  "scrub",
+		FirstName: "Alex",
+		LastName:  "Hogue",
+		Email:     "alex@alexhogue.com",
+		Bio:       "Doing work. Yeah, fun.",
+	},
+	{
+		ID:        2,
+		Username:  "tcurran",
+		FirstName: "Thomas",
+		LastName:  "Curran",
+		Email:     "thomas@curran.com",
+		Bio:       "I am jesus. OK?",
 	},
 }
 
