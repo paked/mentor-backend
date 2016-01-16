@@ -42,3 +42,10 @@ func getMenteesHandler(w http.ResponseWriter, r *http.Request) {
 	coms.With(mentees).
 		OK("Here are your mentees!")
 }
+
+/*
+func getMentorByID(w http.ResponseWriter, r *http.Request) {
+	coms := communicator.New(w)
+
+	coms.With(mentees[]
+}*/

@@ -60,7 +60,3 @@ func getMentorsHandler(w http.ResponseWriter, r *http.Request) {
 	coms.With(mentors).
 		OK("Here are the mentors!")
 }
-
-func addMentorsForMenteeHandler(w http.ResponseWriter, r *http.Request) {
-	coms := communicator.New(w)
-}
