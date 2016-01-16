@@ -10,13 +10,14 @@ import (
 
 var mentees = []User{
 	{
-		ID:        5,
-		Username:  "rafej",
-		FirstName: "Rafe",
-		LastName:  "Skidmore",
-		Email:     "hello@rafej.io",
-		Bio:       "Doing things. Doing them now.",
-		Role:      MenteeRole,
+		ID:         5,
+		Username:   "rafej",
+		FirstName:  "Rafe",
+		LastName:   "Skidmore",
+		Email:      "hello@rafej.io",
+		Bio:        "Making the world a better place by making people smile!",
+		Role:       MenteeRole,
+		PictureURL: "https://avatars1.githubusercontent.com/u/13427998?v=3&s=460",
 	},
 	{
 		ID:        6,
@@ -24,17 +25,24 @@ var mentees = []User{
 		FirstName: "Alex",
 		LastName:  "Hogue",
 		Email:     "alex@alexhogue.com",
-		Bio:       "Doing work. Yeah, fun.",
+		Bio:       "I work at Atlassian and am known as the one true gagmeister.",
 		Role:      MenteeRole,
+		TalkingTo: []int{
+			0, // Harrison Shoebridge
+			1, // Zach Latta
+			3, // Peter Thiel
+		},
+		PictureURL: "http://img.uefa.com/imgml/TP/players/3/2016/324x324/95417.jpg",
 	},
 	{
-		ID:        7,
-		Username:  "tcurran",
-		FirstName: "Thomas",
-		LastName:  "Curran",
-		Email:     "thomas@curran.com",
-		Bio:       "I am jesus. OK?",
-		Role:      MenteeRole,
+		ID:         7,
+		Username:   "tcurran",
+		FirstName:  "Thomas",
+		LastName:   "Curran",
+		Email:      "thomas@curran.com",
+		Bio:        "Son of James Curran, god of Computational Linguistics.",
+		Role:       MenteeRole,
+		PictureURL: "http://www.todaysparent.com/wp-content/uploads/2011/09/ProfileGrowing-Baby.jpg",
 	},
 }
 

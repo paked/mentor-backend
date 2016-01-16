@@ -5,6 +5,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/gorilla/websocket"
+	"github.com/rs/cors"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -25,7 +26,7 @@ func main() {
 
 	r.HandleFunc("/chat", chatHandler)
 
-	http.Handle("/", r)
+	http.Handle("/", cors.Default().Handler(r))
 
 	log.Println("Serving on 0.0.0.0:8080!")
 
