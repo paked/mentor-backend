@@ -2,8 +2,10 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/bigroom/communicator"
+	"github.com/gorilla/mux"
 )
 
 var mentors = []User{
@@ -59,4 +61,17 @@ func getMentorsHandler(w http.ResponseWriter, r *http.Request) {
 
 	coms.With(mentors).
 		OK("Here are the mentors!")
+}
+
+func getMentorHandler(w http.ResponseWriter, r *http.Request) {
+	coms := communicator.New(w)
+
+	i, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		coms.With(err).
+			Fail("Could not convert string")
+	}
+
+	coms.With(mentors[i]).
+		OK()
 }
