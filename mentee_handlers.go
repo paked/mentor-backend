@@ -2,8 +2,10 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/bigroom/communicator"
+	"github.com/gorilla/mux"
 )
 
 var mentees = []User{
@@ -43,9 +45,16 @@ func getMenteesHandler(w http.ResponseWriter, r *http.Request) {
 		OK("Here are your mentees!")
 }
 
-/*
-func getMentorByID(w http.ResponseWriter, r *http.Request) {
+func getMenteeHandler(w http.ResponseWriter, r *http.Request) {
 	coms := communicator.New(w)
 
-	coms.With(mentees[]
-}*/
+	i, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		coms.With(err).
+			Fail("Could no cast id")
+		return
+	}
+
+	coms.With(mentees[i-len(mentors)]).
+		OK()
+}

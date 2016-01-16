@@ -18,6 +18,7 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/mentees", getMenteesHandler).Methods("GET")
+	r.HandleFunc("/mentees/{id}", getMenteeHandler).Methods("GET")
 
 	r.HandleFunc("/mentors", getMentorsHandler).Methods("GET")
 	r.HandleFunc("/mentors/{id}", getMentorHandler).Methods("GET")

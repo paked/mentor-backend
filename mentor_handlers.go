@@ -44,6 +44,11 @@ var mentors = []User{
 		Email:     "me@peterthiel.com",
 		Bio:       "AMA.",
 		Role:      MentorRole,
+		TalkingTo: []int{
+			5, // Rafe Skidmore
+			6, // Alex Hogue
+			7, // Thomas Curran
+		},
 	},
 	{
 		ID:        4,
@@ -70,6 +75,7 @@ func getMentorHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		coms.With(err).
 			Fail("Could not convert string")
+		return
 	}
 
 	coms.With(mentors[i]).

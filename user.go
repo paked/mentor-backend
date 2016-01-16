@@ -15,4 +15,5 @@ type User struct {
 	Email     string `json:"email"`
 	Bio       string `json:"bio"`
 	Role      Role   `json:"role"`
+	TalkingTo []int  `json:"talking_to"`
 }
