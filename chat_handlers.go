@@ -11,7 +11,7 @@ var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool { return true },
 }
 
-func dispatchHandler(w http.ResponseWriter, r *http.Request) {
+func chatHandler(w http.ResponseWriter, r *http.Request) {
 	user, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		return
@@ -31,6 +31,7 @@ func dispatchHandler(w http.ResponseWriter, r *http.Request) {
 		err := user.ReadJSON(&m)
 		if err != nil {
 			log.Warn("Closing connection. Error reading:", err)
+
 			return
 		}
 
@@ -40,12 +41,10 @@ func dispatchHandler(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
-		log.Println("something works")
 		to.WriteJSON(Message{
 			Message:  m.Message,
 			Username: username,
+			Muted:    m.Muted,
 		})
-
-		log.Println("a thing worked")
 	}
 }

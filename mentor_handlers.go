@@ -14,6 +14,7 @@ var mentors = []User{
 		LastName:  "Shoebridge",
 		Email:     "harrison@theshoebridges.com",
 		Bio:       "Half human, half hacker. AMA.",
+		Role:      MentorRole,
 	},
 	{
 		ID:        1,
@@ -22,6 +23,7 @@ var mentors = []User{
 		LastName:  "Latta",
 		Email:     "zach@hackclub.io",
 		Bio:       "Some hybrid of something or other?",
+		Role:      MentorRole,
 	},
 	{
 		ID:        2,
@@ -30,6 +32,7 @@ var mentors = []User{
 		LastName:  "Akagi",
 		Email:     "alex@alexakagi.something",
 		Bio:       "Startups and shit.",
+		Role:      MentorRole,
 	},
 	{
 		ID:        3,
@@ -38,6 +41,7 @@ var mentors = []User{
 		LastName:  "Thiel",
 		Email:     "me@peterthiel.com",
 		Bio:       "AMA.",
+		Role:      MentorRole,
 	},
 	{
 		ID:        4,
@@ -46,6 +50,7 @@ var mentors = []User{
 		LastName:  "Dotcom",
 		Email:     "me@kim.com",
 		Bio:       "I own the cyber space?",
+		Role:      MentorRole,
 	},
 }
 
@@ -54,4 +59,8 @@ func getMentorsHandler(w http.ResponseWriter, r *http.Request) {
 
 	coms.With(mentors).
 		OK("Here are the mentors!")
+}
+
+func addMentorsForMenteeHandler(w http.ResponseWriter, r *http.Request) {
+	coms := communicator.New(w)
 }

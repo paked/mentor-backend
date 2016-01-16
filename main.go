@@ -8,7 +8,9 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-var users map[string]*websocket.Conn
+var (
+	users map[string]*websocket.Conn
+)
 
 func main() {
 	users = make(map[string]*websocket.Conn)
@@ -17,6 +19,7 @@ func main() {
 
 	r.HandleFunc("/mentees", getMenteesHandler).Methods("GET")
 	r.HandleFunc("/mentors", getMentorsHandler).Methods("GET")
+	r.HandleFunc("/chat", chatHandler)
 
 	http.Handle("/", r)
 
