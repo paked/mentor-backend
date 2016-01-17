@@ -26,7 +26,7 @@ func postMessageHandler(w http.ResponseWriter, r *http.Request) {
 
 	m := Message{
 		ID:      id,
-		Message: r.FormValue("content"),
+		Message: r.FormValue("message"),
 		Muted:   false,
 	}
 
