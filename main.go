@@ -25,6 +25,8 @@ func main() {
 	r.HandleFunc("/mentors/{id}", getMentorHandler).Methods("GET")
 
 	r.HandleFunc("/chat", chatHandler)
+	r.HandleFunc("/chat/messages", getChatHandler).Methods("GET")
+	r.HandleFunc("/chat/messages", postMessageHandler).Methods("POST")
 
 	http.Handle("/", cors.Default().Handler(r))
 
