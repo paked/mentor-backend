@@ -20,19 +20,19 @@ var mentees = []User{
 		PictureURL: "https://avatars1.githubusercontent.com/u/13427998?v=3&s=460",
 	},
 	{
-		ID:        6,
-		Username:  "scrub",
-		FirstName: "Alex",
-		LastName:  "Hogue",
-		Email:     "alex@alexhogue.com",
-		Bio:       "I work at Atlassian and am known as the one true gagmeister.",
-		Role:      MenteeRole,
+		ID:         6,
+		Username:   "harrison",
+		FirstName:  "Harrison",
+		LastName:   "Shoebridge",
+		Email:      "harrison@theshoebridges.com",
+		Bio:        "Half human, half hacker.",
+		Role:       MenteeRole,
+		PictureURL: "https://avatars1.githubusercontent.com/u/8407370?v=3&s=460",
 		TalkingTo: []int{
-			0, // Harrison Shoebridge
+			0, // Alex Hogue
 			1, // Zach Latta
 			3, // Peter Thiel
 		},
-		PictureURL: "http://img.uefa.com/imgml/TP/players/3/2016/324x324/95417.jpg",
 	},
 	{
 		ID:         7,

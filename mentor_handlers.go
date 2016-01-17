@@ -11,13 +11,13 @@ import (
 var mentors = []User{
 	{
 		ID:         0,
-		Username:   "harrison",
-		FirstName:  "Harrison",
-		LastName:   "Shoebridge",
-		Email:      "harrison@theshoebridges.com",
-		Bio:        "Half human, half hacker. I do shit.",
+		Username:   "scrub",
+		FirstName:  "Alex",
+		LastName:   "Hogue",
+		Email:      "alex@alexhogue.com",
+		Bio:        "I work at Atlassian and am known as the one true gagmeister.",
 		Role:       MentorRole,
-		PictureURL: "https://avatars1.githubusercontent.com/u/8407370?v=3&s=460",
+		PictureURL: "http://img.uefa.com/imgml/TP/players/3/2016/324x324/95417.jpg",
 	},
 	{
 		ID:         1,
