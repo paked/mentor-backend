@@ -21,6 +21,7 @@ func postMessageHandler(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(r.FormValue("from"))
 	if err != nil {
 		coms.Fail("shit happened")
+		return
 	}
 
 	m := Message{
