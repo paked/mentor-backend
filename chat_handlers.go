@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/bigroom/communicator"
 	"github.com/gorilla/websocket"
 	log "github.com/sirupsen/logrus"
 )
@@ -47,4 +48,28 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 			Muted:    m.Muted,
 		})
 	}
+}
+
+var messages []Message
+
+func getChatHandler(w http.ResponseWriter, r *http.Request) {
+	coms := communicator.New(w)
+
+	coms.With(messages).
+		OK()
+}
+
+func postMessageHandler(w http.ResponseWriter, r *http.Request) {
+	coms := communicator.New(w)
+
+	m := Message{
+		Username: r.FormValue("from"),
+		Message:  r.FormValue("content"),
+		Muted:    false,
+	}
+
+	messages = append(messages, m)
+
+	coms.With(m).
+		OK()
 }
