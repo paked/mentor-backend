@@ -24,7 +24,6 @@ func main() {
 	r.HandleFunc("/mentors", getMentorsHandler).Methods("GET")
 	r.HandleFunc("/mentors/{id}", getMentorHandler).Methods("GET")
 
-	r.HandleFunc("/chat", chatHandler)
 	r.HandleFunc("/chat/messages", getChatHandler).Methods("GET")
 	r.HandleFunc("/chat/messages", postMessageHandler).Methods("POST")
 
